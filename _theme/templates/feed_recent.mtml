@@ -22,9 +22,9 @@
         <mt:If tag="EntryAuthorURL"><uri><$mt:EntryAuthorURL encode_xml="1"$></uri></mt:If>
     </author>
     <mt:EntryCategories>
-        <category term="<$mt:CategoryLabel encode_xml="1"$>" scheme="http://www.sixapart.com/ns/types#category" />
+        <category term="<$mt:CategoryLabel encode_xml="1"$>" />
     </mt:EntryCategories>
-    <mt:EntryIfTagged><mt:EntryTags><category term="<$mt:TagName normalize="1" encode_xml="1"$>" label="<$mt:TagName encode_xml="1"$>" scheme="http://www.sixapart.com/ns/types#tag" />
+    <mt:EntryIfTagged><mt:EntryTags><category term="<$mt:TagName normalize="1" encode_xml="1"$>" label="<$mt:TagName encode_xml="1"$>" />
     </mt:EntryTags></mt:EntryIfTagged>
     <content type="html" xml:lang="<$mt:BlogLanguage ietf="1"$>" xml:base="<$mt:BlogURL encode_xml="1"$>">
         <$mt:EntryBody encode_xml="1"$>
