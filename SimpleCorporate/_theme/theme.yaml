@@ -1,0 +1,71 @@
+id: simplecorporate
+elements:
+  blog_static_files:
+    component: ~
+    data:
+      - images
+      - js
+    importer: blog_static_files
+  template_set:
+    component: ~
+    data:
+      base_path: templates
+      label: 'exported_template set'
+      templates:
+        archive:
+          category_entry_listing:
+            label: カテゴリ別記事リスト
+            mappings:
+              category:
+                archive_type: Category
+          yearly_entry_listing:
+            label: 年別ブログ記事リスト
+            mappings:
+              yearly:
+                archive_type: Yearly
+        index:
+          feed_recent:
+            label: 最新記事のフィード
+            outfile: atom.xml
+            rebuild_me: 1
+          index_page:
+            label: インデックスページ
+            outfile: index.html
+            rebuild_me: 1
+          main_index:
+            label: 'ニュース TOP'
+            outfile: news.html
+            rebuild_me: 1
+          styles:
+            label: スタイルシート
+            outfile: styles.css
+            rebuild_me: 1
+        individual:
+          entry:
+            label: 記事
+            mappings:
+              individual:
+                archive_type: Individual
+        module:
+          header:
+            label: header
+          blog-sidemenu:
+            label: blog-sidemenu
+          entry-list:
+            label: entry-list
+          config:
+            label: config
+          common_stylesheet:
+            label: common_stylesheet
+          common_head_js:
+            label: common_head_js
+          common_bottom_js:
+            label: common_bottom_js
+          footer:
+            label: footer
+        page:
+          page:
+            label: ウェブページ
+            mappings:
+              page:
+                archive_type: Page

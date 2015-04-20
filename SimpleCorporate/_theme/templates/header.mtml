@@ -1,0 +1,47 @@
+<header class="navbar">
+  <div class="container">
+    <h1 class="navbar-header">
+      <a href="<$mt:BlogRelativeURL$>" class="brand"><img src="<$mt:BlogRelativeURL$>images/logo.png"></a>
+      <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button"><i class="fa fa-list"></i></button>
+    </h1>
+    <nav class="navbar-collapse collapse navbar-right">
+      <ul class="header-socialbtn">
+        <mt:If name="facebook"><li class="facebook"><a href="<$mt:GetVar name="facebook"$>"><i class="fa fa-facebook"></i></a></li></mt:If>
+        <mt:If name="twitter"><li class="twitter"><a href="<$mt:GetVar name="twitter"$>"><i class="fa fa-twitter"></i></a></li></mt:If>
+        <mt:If name="google"><li class="googleplus"><a href="<$mt:GetVar name="google"$>"><i class="fa fa-google"></i></a></li></mt:If>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="<$mt:BlogRelativeURL$>">TOP</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">ニュース<i class="fa fa-caret-down fa-sm"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="<$mt:BlogRelativeURL$>news.html">TOP</a></li>
+          <mt:TopLevelCategories>
+            <mt:SetVarBlock name="category_count"><$mt:CategoryCount$></mt:SetVarBlock>
+            <mt:If name="category_count" ne="0">
+            <li><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$></a></li>
+            </mt:If>
+          </mt:TopLevelCategories>
+          </ul>
+        </li>
+        <mt:Folders>
+        <mt:SetVarBlock name="description"><$mt:FolderDescription$></mt:SetVarBlock>
+        <mt:SetVarBlock name="currentpage"><$mt:FolderLabel$></mt:SetVarBlock>
+        <mt:Unless name="description" eq="footer_link">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><$mt:FolderLabel$><i class="fa fa-caret-down fa-sm"></i></a>
+          <ul class="dropdown-menu">
+          <mt:Pages>
+            <li><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+          </mt:Pages>
+          </ul>
+        </li>
+        </mt:Unless>
+        </mt:Folders>
+        <mt:Pages no_folder="1">
+        <li><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+        </mt:Pages>
+      </ul>
+    </nav>
+  </div>
+</header>

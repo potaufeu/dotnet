@@ -1,0 +1,18 @@
+        <mt:Entries>
+          <article class="entry clearfix">
+            <mt:EntryAssets type="image" sort_order="ascend" limit="1">
+            <figure><img src="<$mt:AssetThumbnailURL width="240"$>"></figure>
+            </mt:EntryAssets>
+            <div class="entry-meta">
+              <time datetime="<$mt:EntryDate format="%Y-%m-%d"$>"><span class="year"><$mt:EntryDate format="%Y"$>年</span><span class="monthday"><$mt:EntryDate format="%b月%e日"$></span></time>
+              <mt:EntryCategories type="primary"><a href="<$mt:CategoryArchiveLink$>" class="category"><$mt:CategoryLabel$></a></mt:EntryCategories>
+            </div>
+            <h1 class="entrytitle"><a href="<$mt:EntryPermalink$>"><$mt:EntryTitle$></a></h1>
+            <div class="entry-excerpt">
+              <$mt:EntryExcerpt$>
+            </div>
+            <div class="pagemore">
+              <a href="<$mt:EntryPermalink$>" class="btn btn-primary">この記事の詳細を見る</a>
+            </div>
+          </article><!-- /.entry -->
+        </mt:Entries>

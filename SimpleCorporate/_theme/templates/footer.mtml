@@ -1,0 +1,21 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" id="footer-logoarea">
+        <p id="copyright">&copy;Example, Ltd.</p>
+      </div>
+      <nav class="col-sm-6" id="footer-navi" role="navigation">
+        <ul class="pull-right">
+        <mt:Folders>
+        <mt:SetVarBlock name="description"><$mt:FolderDescription$></mt:SetVarBlock>
+        <mt:If name="description" eq="footer_link">
+        <mt:Pages>
+          <li><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+        </mt:Pages>
+        </mt:If>
+        </mt:Folders>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

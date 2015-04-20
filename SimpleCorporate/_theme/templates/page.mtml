@@ -1,0 +1,87 @@
+<!DOCTYPE html><$mt:Include module="config"$>
+<html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="<$mt:PublishCharset$>">
+<title><$mt:PageTitle$> <mt:If tag="pagefolder">| <mt:PageFolder><$mt:FolderLabel$></mt:PageFolder> </mt:If>| <$mt:BlogName encode_html="1"$></title>
+<meta name="description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
+<meta name="keywords" content="<$mt:GetVar name="metakeywords"$><$mt:PageKeywords$>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
+<link rel="start" href="<$mt:BlogURL encode_html="1"$>">
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>">
+<$mt:CanonicalLink$>
+<!-- Open Graph Protocol -->
+<meta property="og:type" content="article">
+<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:Else><$mt:Var name="blog_lang"$></mt:If>">
+<meta property="og:title" content="<$mt:PageTitle$> <mt:If tag="pagefolder">| <mt:PageFolder><$mt:FolderLabel$></mt:PageFolder> </mt:If>| <$mt:BlogName encode_html="1"$>">
+<meta property="og:url" content="<$mt:PagePermalink encode_html="1"$>">
+<meta property="og:description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
+<meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+<meta property="og:image" content="<$mt:BlogURL encode_html="1"$>images/ogimage.png">
+<!-- Microdata -->
+<meta itemprop="description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
+<link itemprop="url" href="<$mt:PagePermalink encode_html="1"$>">
+<link itemprop="image" href="<$mt:BlogURL encode_html="1"$>images/ogimage.png">
+<$mt:Include module="common_stylesheet"$>
+<$mt:Include module="common_head_js"$>
+</head>
+
+<body id="top">
+
+<mt:SetVarBlock name="thisfloder"><mt:PageFolder><$mt:FolderLabel$></mt:PageFolder></mt:SetVarBlock>
+<mt:SetVarBlock name="thispage"><$mt:PageTitle$></mt:SetVarBlock>
+
+<$mt:Include module="header"$>
+
+<section id="localnavi">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <nav role="navigation" class="breadcrumb">
+          <ul class="clearfix">
+            <li class="home"><a href="<$mt:BlogRelativeURL$>"><i class="fa fa-home fa-lg"></i></a></li>
+            <mt:If name="thisfloder">
+            <li class="pagetop">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><mt:PageFolder><$mt:FolderLabel$></mt:PageFolder><i class="fa fa-caret-down fa-sm"></i></a>
+              <ul class="dropdown-menu">
+              <mt:Pages folder="$thisfloder">
+              <mt:SetVarBlock name="pagetitle"><$mt:PageTitle$></mt:SetVarBlock>
+                <li<mt:If name="thispage" eq="$pagetitle"> class="active"</mt:If>><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+              </mt:Pages>
+              </ul>
+            </li>
+            </mt:If>
+            <li><span><$mt:PageTitle$></span></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mainvisual-lower">
+  <div class="overray"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2><i class="fa fa-tag"></i><$mt:PageTitle$></h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="content">
+  <article id="webpage-body">
+    <div class="container">
+      <$mt:PageBody$>
+      <$mt:PageMore$>
+    </div>
+  </article>
+</div>
+
+<$mt:Include module="footer"$>
+
+<$mt:Include module="common_bottom_js"$>
+
+</body>
+</html>
