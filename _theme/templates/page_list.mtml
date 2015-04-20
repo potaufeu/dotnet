@@ -3,7 +3,7 @@
 <html lang="ja">
 
 <head>
-    <title><$mt:ArchiveTitle$><__trans phrase="Archives"> - <$mt:BlogName encode_html="1"$></title>
+    <title><__trans phrase="Pages"> - <$mt:BlogName encode_html="1"$></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                    <h1><$mt:ArchiveTitle$><__trans phrase="Archives"></h1>
+                    <h1><__trans phrase="Pages"> </h1>
                     </div>
                 </div>
             </div>
@@ -35,20 +35,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <mt:Entries limit="10">
+            <mt:Pages limit="10">
                 <div class="post-preview">
-                <a href="<mt:EntryPermaLink>">
+                <a href="<mt:PagePermaLink>">
                         <h2 class="post-title">
-                        <mt:Entrytitle>
+                        <mt:Pagetitle>
                         </h2>
                     </a>
-                <p class="post-meta">Posted by <mt:If tag="EntryAuthorURL"><a href="<mtEntryAuthorURL>"></mt:If><mt:AuthorName><mt:If tag="EntryAuthorURL"></a></mt:If> on <mt:EntryDate language="en"></p>
                 </div>
                 <hr>
-            </mt:Entries>
-            <mt:Entries paginate_by="10">
+            </mt:Pages>
+            <mt:Pages paginate_by="10">
                 <!-- Pager -->
-                <mt:EntriesFooter>
+                <mt:PagesFooter>
                 <ul class="pager">
                   <mt:PaginationHasPrevious>
                   <li class="previous">
@@ -61,8 +60,8 @@
                   </li>
                   </mt:PaginationHasNext>
                 </ul>
-                </mt:EntriesFooter>
-             </mt:Entries>
+                </mt:PagesFooter>
+             </mt:Pages>
             </div>
         </div>
     </div>
