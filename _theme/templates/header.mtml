@@ -1,0 +1,21 @@
+<header class="navbar">
+  <div class="container">
+    <h1 class="navbar-header navbar-scroll">
+      <a href="<mt:blogrelativeurl>#sitetop" class="brand"><img src="<mt:blogrelativeurl>images/logo.png"></a>
+      <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button"><i class="fa fa-list"></i></button>
+    </h1>
+    <nav class="navbar-collapse collapse navbar-right">
+    <ul class="header-socialbtn">
+      <mt:if name="facebook"><li class="facebook"><a href="<mt:getvar name="facebook">"><i class="fa fa-facebook"></i></a></li></mt:if>
+      <mt:if name="twitter"><li class="twitter"><a href="<mt:getvar name="twitter">"><i class="fa fa-twitter"></i></a></li></mt:if>
+      <mt:if name="google"><li class="googleplus"><a href="<mt:getvar name="google">"><i class="fa fa-google"></i></a></li></mt:if>
+    </ul>
+    <ul class="nav navbar-nav navbar-scroll">
+      <mt:Pages sort_order="ascend">
+            <li><a href="#<$MTPageBasename$>"><$mt:PageTitle$></a></li>
+	  </mt:Pages>
+	  		<li><a href="/blog/">ブログ</a></li>
+    </ul>
+  </nav>
+  </div>
+</header>

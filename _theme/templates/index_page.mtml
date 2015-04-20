@@ -1,0 +1,57 @@
+<!DOCTYPE html><mt:include module="config">
+<html lang="<mt:bloglanguage>" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="<mt:publishcharset>">
+<title><mt:blogname encode_html="1"></title>
+<meta name="description" content="<mt:blogdescription remove_html="1" encede_html="1">">
+<meta name="keywords" content="<mt:getvar name="metakeywords">">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="<mt:blogurl encode_html="1">images/favicon.ico">
+<link rel="start" href="<mt:blogurl encode_html="1">">
+<mt:CanonicalLink>
+<!-- Open Graph Protocol -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="<mt:blogLanguage setvar="blog_lang"><mt:if name="blog_lang" eq="ja">ja_JP<mt:else><mt:Var name="blog_lang"></mt:if>">
+<meta property="og:title" content="<mt:blogname encode_html="1">">
+<meta property="og:url" content="<mt:blogurl encode_html="1">">
+<meta property="og:description" content="<mt:blogdescription remove_html="1" encede_html="1">">
+<meta property="og:site_name" content="<mt:blogname encode_html="1">">
+<meta property="og:image" content="<mt:blogurl encode_html="1">images/ogimage.png">
+<!-- Microdata -->
+<meta itemprop="description" content="<mt:blogdescription remove_html="1" encede_html="1">">
+<link itemprop="url" href="<mt:blogurl encode_html="1">">
+<link itemprop="image" href="<mt:blogurl encode_html="1">images/ogimage.png">
+<mt:include module="common_stylesheet">
+<mt:include module="common_head_js">
+</head>
+
+<mt:setvarblock name="thispage">TOP</mt:setvarblock>
+
+<body id="sitetop">
+<mt:include module="header">
+<section id="mainvisual" id="top">
+  <div class="container">
+    <h2><img src="<mt:blogurl encode_html="1">images/main-img.png" alt=""></h2>
+    <p id="main-text">MovableType.netデザインテーマ「Simple Product」のデモサイトです！!<br />
+「Simple Product」は1ページ完結可能なレスポンシブウェブデザインを採用したテーマです。a
+    </p>
+  </div>
+</section>
+
+<mt:Pages sort_order="ascend">
+  <section class="webpages" id="<$MTPageBasename$>">
+    <div class="container">
+      <h3><$mt:PageTitle$></h3>
+	  <div class="row">
+		  <$mt:PageBody$>
+	  </div>
+    </div>
+  </section>
+</mt:Pages>
+
+<mt:include module="footer">
+
+<mt:include module="common_bottom_js">
+  
+</body>
+</html>

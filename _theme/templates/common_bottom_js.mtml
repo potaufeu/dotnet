@@ -1,0 +1,24 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="<mt:blogrelativeurl>js/common.js"></script>
+<script type="text/javascript" src="<mt:blogrelativeurl>js/jquery.smooth-scroll.min.js"></script>
+<script>
+$(function() {
+  $('.navbar-scroll a').smoothScroll();
+});
+</script>
+<script>
+$(function(){
+    var url = $(location).attr('href');
+    if (url.indexOf("?id=") == -1) {
+        // スムーズスクロール以外の処理（必要なら）
+    }else{
+        // スムーズスクロールの処理
+        var url_sp = url.split("?id=");
+        var hash   = '#' + url_sp[url_sp.length - 1];
+        var tgt    = $(hash);
+        var pos    = tgt.offset().top - 50;
+        $("html, body").animate({scrollTop:pos}, 750, "swing");
+    }
+});
+</script>
