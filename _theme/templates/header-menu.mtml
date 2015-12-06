@@ -1,0 +1,52 @@
+<div class="contain-to-grid show-for-large-up">
+  <div class="menu top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="<$mt:BlogRelativeURL$>"><$mt:BlogName encode_html="1"$></a></h1></li>
+      <li class="toggle-topbar menu-icon">
+        <a href="">Menu</a>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+    <ul class="right">
+      <li><a href="<$mt:BlogRelativeURL$>">ホーム</a></li>
+        <li class="has-dropdown">
+          <a data-dropdown="drop-news" aria-controls="drop-news" aria-expanded="false">ニュース</a>
+          <ul id="drop-news" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+            <li><a href="<$mt:BlogRelativeURL$>news.html">TOP</a></li>
+            <mt:Categories>
+            <mt:SetVarBlock name="category_count"><$mt:CategoryCount$></mt:SetVarBlock>
+            <mt:If name="category_count" ne="0">
+            <li><a href="<$mt:CategoryArchiveLink$>"><$mt:CategoryLabel$></a></li>
+            </mt:If>
+            </mt:Categories>
+          </ul>
+        </li>
+        <mt:Folders>
+        <mt:SetVarBlock name="description"><$mt:FolderDescription$></mt:SetVarBlock>
+        <mt:SetVarBlock name="currentpage"><$mt:FolderLabel$></mt:SetVarBlock>
+        <mt:Unless name="description" eq="footer_link">
+        <li class="has-dropdown">
+          <a data-dropdown="<$mt:FolderBasename$>" aria-controls="<$mt:FolderBasename$>" aria-expanded="false"><$mt:FolderLabel$></a>
+          <ul id="<$mt:FolderBasename$>" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+          <mt:Pages sort_order="ascend">
+            <li><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+          </mt:Pages>
+          </ul>
+        </li>
+        </mt:Unless>
+        </mt:Folders>
+        <mt:Pages no_folder="1" sort_order="ascend">
+        <li><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+        </mt:Pages>
+    </ul>
+    </section>
+  </div>
+</div>
+
+<div class="toggle-button hide-for-large-up" style="background-color:rgb(58, 35, 35);">
+  <a class="left-off-canvas-toggle menu-icon">
+  <span>MENU</span>
+  </a>
+</div>

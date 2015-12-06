@@ -1,0 +1,21 @@
+<mt:Entries paginate_by="$paginate">
+<div class="entry">
+  <a href="<$mt:EntryPermalink$>"><img src="<mt:EntryAssets type="image" sort_order="ascend" limit="1"><$mt:AssetThumbnailURL width="240"$><mt:Else><$mt:BlogRelativeURL$>images/noimage-s.jpg</mt:EntryAssets>" alt="<$mt:EntryTitle$>"></a>
+  <h3><$mt:EntryTitle$></h3>
+  <p><$mt:EntryDate format="%Y.%m.%d"$> <mt:EntryCategories type="primary"><a href="<$mt:CategoryArchiveLink$>" class="category"><$mt:CategoryLabel encode_html="1"$></a></mt:EntryCategories><br /><$mt:EntryExcerpt$></p>
+  <p class="text-right"><a href="<$mt:EntryPermalink$>" class="button"><i class="fa fa-angle-double-right"></i> 続きを見る</a></p>
+</div>
+
+<mt:EntriesFooter>
+<nav class="page-navigation">
+  <ul class="page-navigation-list">
+    <mt:PaginationHasPrevious>
+    <li class="page-navigation-list-item page-navigation-prev"><a href="<$mt:PaginationPreviousURL$>" rel="prev">前の<$mt:GetVar name="paginate"$>件</a></li>
+    </mt:PaginationHasPrevious>
+    <mt:PaginationHasNext>
+    <li class="page-navigation-list-item page-navigation-next"><a href="<$mt:PaginationNextURL$>" rel="next">次の<$mt:GetVar name="paginate"$>件</a></li>
+    </mt:PaginationHasNext>
+  </ul>
+</nav>
+</mt:EntriesFooter>
+</mt:Entries>
