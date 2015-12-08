@@ -1,36 +1,109 @@
-id: simpleproduct
+id: "demo"
+label: "demo"
+version: "1.0.0"
+author_link: "http://whizzo.movabletype.io/"
+author_name: "whizzo "
+description: "demo"
+class: "blog"
 elements:
   blog_static_files:
-    component: ~
+    component: '~'
     data:
+      - css
       - images
       - js
     importer: blog_static_files
   template_set:
-    component: ~
+    component: core
     data:
       base_path: templates
-      label: 'exported_template set'
       templates:
+        archive:
+          category_entry_listing:
+            filename: category_entry_listing.mtml
+            label: カテゴリ別ニュース記事リスト
+            mappings:
+              category:
+                archive_type: Category
+                file_template: "%-c/%i"
+                preferred: 1
+          monthly_entry_listing:
+            filename: monthly_entry_listing.mtml
+            label: 月別ニュース記事リスト
+            mappings:
+              monthly:
+                archive_type: Monthly
+                file_template: "%y/%m/%i"
+                preferred: 1
         index:
-          index_page:
-            label: インデックスページ
+          feed_recent:
+            filename: atom.xml.mtml
+            label: 最新記事のフィード
+            outfile: atom.xml
+            rebuild_me: 1
+          main_index:
+            filename: index.html.mtml
+            label: メインページ
             outfile: index.html
             rebuild_me: 1
+          news:
+            filename: news.html.mtml
+            label: ニュース TOP
+            outfile: news.html
+            rebuild_me: 1
           styles:
+            filename: styles.css.mtml
             label: スタイルシート
             outfile: styles.css
             rebuild_me: 1
+        individual:
+          entry:
+            filename: entry.mtml
+            label: 記事
+            mappings:
+              individual:
+                archive_type: Individual
+                file_template: "%y/%m/%-f"
+                preferred: 1
         module:
-          header:
-            label: header
           config:
+            filename: config.mtml
             label: config
-          common_stylesheet:
-            label: common_stylesheet
-          common_head_js:
-            label: common_head_js
-          common_bottom_js:
-            label: common_bottom_js
+          entry-list:
+            filename: entry-list.mtml
+            label: entry-list
           footer:
+            filename: footer.mtml
             label: footer
+          footer-script:
+            filename: footer-script.mtml
+            label: footer-script
+          header-menu:
+            filename: header-menu.mtml
+            label: header-menu
+          information:
+            filename: information.mtml
+            label: information
+          instagram:
+            filename: instagram.mtml
+            label: instagram
+          left-menu:
+            filename: left-menu.mtml
+            label: left-menu
+          news-sidebar:
+            filename: news-sidebar.mtml
+            label: news-sidebar
+          twitter:
+            filename: twitter.mtml
+            label: twitter
+        page:
+          webpage:
+            filename: webpage.mtml
+            label: ウェブページ
+            mappings:
+              page:
+                archive_type: Page
+                file_template: "%-c/%-f"
+                preferred: 1
+    importer: template_set
+

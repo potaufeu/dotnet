@@ -1,0 +1,123 @@
+<!DOCTYPE html><$mt:Include module="config"$>
+<html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="<$mt:PublishCharset$>">
+<title><$mt:BlogName encode_html="1"$></title>
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
+<meta name="keywords" content="<$mt:GetVar name="metakeywords"$>">
+<link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
+<link rel="start" href="<$mt:BlogURL encode_html="1"$>">
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>">
+<$mt:CanonicalLink$>
+
+<!-- Open Graph Protocol -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:Else><$mt:Var name="blog_lang"$></mt:If>">
+<meta property="og:title" content="<$mt:BlogName encode_html="1"$>">
+<meta property="og:url" content="<$mt:BlogURL encode_html="1"$>">
+<meta property="og:description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
+<meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+<meta property="og:image" content="<$mt:BlogURL encode_html="1"$>images/ogimage.png">
+<!-- Microdata -->
+<meta itemprop="description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
+<link itemprop="url" href="<$mt:BlogURL encode_html="1"$>">
+<link itemprop="image" href="<$mt:BlogURL encode_html="1"$>images/ogimage.png">
+
+<link href='http://fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="<$mt:BlogURL encode_html="1"$>css/normalize.css">
+<link rel="stylesheet" href="<$mt:BlogURL encode_html="1"$>css/foundation.min.css">
+<link rel="stylesheet" href="<$mt:BlogURL encode_html="1"$>styles.css">
+<script src="<$mt:BlogURL encode_html="1"$>js/modernizr.js"></script>
+</head>
+
+<body class="main-index">
+
+<div class="off-canvas-wrap">
+<div class="inner-wrap">
+
+<$mt:Include module="header-menu"$>
+
+<div class="row">
+  <div class="columns medium-12">
+    <div class="header text-center">
+      <h1><a href="<$mt:BlogRelativeURL$>"><img src="<$mt:BlogURL encode_html="1"$>images/logo.png" alt="" class="logo" width="150"><br />Movable Type CAFE</a></h1>
+      <p>SINCE 2001</p>
+    </div>
+  </div><!-- columns -->
+</div><!-- row -->
+
+<div class="row">
+  <div class="columns medium-12">
+    <div id="mainvisual">
+      <img src="<$mt:BlogURL encode_html="1"$>images/slide01.jpg" alt="" width="0" height="0">
+      <div class="slide">
+        <div class="inner">
+          <h3>焼きたてパンかな</h3>
+          <p>焼きたてのパンの販売をはじめましたよ</p>
+        </div>
+      </div>
+   </div><!-- mainvisual -->
+  </div><!-- columns -->
+</div><!-- row -->
+
+<div class="row">
+  <div class="columns show-for-large-up large-3">
+    <mt:Folders>
+        <mt:SetVarBlock name="description"><$mt:FolderDescription$></mt:SetVarBlock>
+        <mt:SetVarBlock name="currentpage"><$mt:FolderLabel$></mt:SetVarBlock>
+        <mt:Unless name="description" eq="footer_link">
+     <div class="group">
+       <h2><$mt:FolderLabel$></h2>
+       <div class="sidemenu">
+         <ul>
+         <mt:Pages sort_order="ascend">
+            <li><a href="<$mt:PagePermalink$>"><$mt:PageTitle$></a></li>
+          </mt:Pages>
+         </ul>
+       </div>
+     </div><!-- group -->
+        </mt:Unless>
+    </mt:Folders>
+
+    <div class="group">
+      <h2>Instagram</h2>
+      <$mt:Include module="instagram"$>
+    </div><!-- group -->
+  </div><!-- columns -->
+
+  <div class="columns medium-8 large-6">
+    <div class="group">
+      <h2>NEWS ニュース</h2>
+        <div class="news">
+          <ul>
+          <mt:Entries unique="1" limit="5">
+            <li>
+            <a href="<$mt:EntryPermalink$>">
+            <time datetime="<$mt:EntryDate format="%Y.%m.%d"$>"><$mt:EntryDate format="%Y.%m.%d"$></time>
+            <p class="title"><$mt:EntryTitle encode_html="1"$></p>
+            </a>
+            </li>
+          </mt:Entries>
+          </ul>
+        </div>
+      <p class="text-right news-list"><a href="<$mt:BlogURL encode_html="1"$>news.html" class="newslist-button"><i class="fa fa-angle-double-right"></i> ニュース一覧</a></p>
+    </div><!-- group -->
+  </div><!-- columns -->
+
+  <div class="columns medium-4 large-3">
+    <$mt:Include module="information"$>
+  </div><!-- columns -->
+</div><!-- row -->
+
+<$mt:Include module="footer"$>
+
+<$mt:Include module="left-menu"$>
+
+</div><!-- inner-wrap -->
+</div><!-- off-canvas-wrap -->
+
+<$mt:Include module="footer-script"$>
+</body>
+</html>

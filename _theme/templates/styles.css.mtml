@@ -1,0 +1,477 @@
+@charset "UTF-8";
+
+@-ms-viewport {
+width: device-width;}
+
+body {
+    font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Marmelad', 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+}
+.row, .contain-to-grid .top-bar {
+    max-width: 1200px;
+}
+a {
+    color: #333333;
+}
+a:hover, a:focus {
+    color: #5c1313;
+}
+
+/* トップバー */
+.contain-to-grid, .menu, .top-bar-section li:not(.has-form) a:not(.button), .top-bar.expanded .title-area {
+    background-color: rgb(58, 35, 35);
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background-color: #666666;
+}
+.top-bar-section .f-dropdown li {
+    width: 200px; 
+}
+
+
+/* ヘッダー */
+.header {
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+.header h1 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1;
+}
+.header h1 a {
+    color: #000;
+    text-decoration: none;
+}
+.header p {
+    margin: 8px 0 0 0;
+    font-size: 12px;
+    line-height: 1;
+}
+.header .logo {
+    margin: 0 0 10px 0;
+    border: none;
+    vertical-align: bottom;
+}
+.hide-for-large-up a:hover,a:focus {
+    color: #ffffff;
+    background-color: #666666;
+}
+
+
+/*トップメインイメージ部分 */
+.slide {
+    height: 280px;
+    padding: 50px 20px 20px 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #dfe3e8;
+    background-image: url(<$mt:BlogURL encode_html="1"$>images/slide01.jpg);
+    background-position: 50% 0%;
+    background-size: cover;
+}
+.slide h3 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1;
+}
+.slide h3 a {
+    color: #000;
+    text-decoration: none;
+}
+
+.slide p {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* 枠の設定 */
+.slide .inner {
+    padding: 20px;
+    background-color: rgba(255,255,255,0.6);
+}
+
+/* パーツを重ねる設定 */
+.slide {
+    position: relative;
+}
+.slide .inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.orbit-container {
+    margin-bottom: 10px
+}
+#mainvisual {
+    margin-bottom: 25px;
+    margin-top: -15px;
+}
+
+
+/* 下層ページバナー */
+.page-banner {
+    background-color: #dfe3e8;
+    background-image: url("<$mt:BlogURL encode_html="1"$>images/slide01.jpg");
+    background-position: 50% 0;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 140px;
+}
+.page-banner h2 {
+    font-size: 2.2em;
+}
+.page-banner .inner {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 44px;
+    height: 140px;
+}
+
+/* 下層ページ */
+.breadcrumbs {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0.75rem 0.875rem;
+}
+ul.breadcrumbs {
+    margin-bottom: 0;
+}
+.breadcrumbs > * a, .breadcrumbs > * span {
+    color: #333333;
+    font-size: 0.75rem;
+    text-transform: none;
+}
+.entry-meta {
+    margin-bottom: 10px;
+}
+.page-title {
+    font-size: 1.5rem; 
+}
+
+/* ページ送り */
+.page-navigation {
+    text-align: center;
+}
+.page-navigation ul {
+    display: block;
+    padding-bottom: 10px;
+}
+.page-navigation li {
+    display: inline-block;
+    border-bottom: none;
+    list-style: none;
+}
+.page-navigation li a {
+    padding: 0 10px;
+}
+.page-navigation li a[rel="prev"]::before {
+    content: "«";
+    margin-right: 0.3em;
+}
+
+.page-navigation li a[rel="next"]::after {
+    content: "»";
+    margin-left: 0.3em;
+}
+
+/* グループ */
+.group {
+    margin-bottom: 30px;
+    padding: 0;
+}
+.group > h2 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+/* 罫線で区切る設定 */
+.group > h2 {
+    padding: 0 0 0 5px;
+    border-left: solid 5px rgb(58, 35, 35);
+}
+
+/* 左サイドメニュー */
+.sidemenu {
+    padding: 20px; 
+    background-color: #dfe3e8;
+}
+.sidemenu h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.sidemenu ul, .sidemenu ol {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    list-style: none;
+}
+.sidemenu li a {
+    display: block;
+    padding: 8px 5px 8px 5px;
+    color: #000;
+    text-decoration: none;
+}
+.sidemenu li a:hover {
+    background-color: #eee;
+}
+
+/* 枠＋見出しの設定 */
+.sidemenu {
+    margin-bottom: 10px;
+    padding: 0 0 1px 0;
+    background-color: #faedcf;
+}
+.sidemenu > h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #dfc27e;
+    font-size: 14px;
+}
+.sidemenu > p {
+    margin: 10px;
+}
+.sidemenu li a {
+    padding-left: 10px;
+}
+.sidemenu li a:hover {
+    background-color: #ffe;
+}
+
+/* ピックアップ */
+.entry {
+    margin-bottom: 10px;
+    padding: 20px 20px 10px 20px;
+    background-color: #faedcf;
+}
+.entry img {
+    float: left;
+    max-width: 30%;
+    height: auto;
+    margin: 0;
+    vertical-align: bottom;
+}
+.entry h3 {
+    margin: 0 0 10px 33%;
+    font-size: 18px;
+    line-height: 1.2;
+}
+.entry p {
+    margin: 0 0 10px 33%;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.entry:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.entry {
+    *zoom: 1;
+}
+
+/* 罫線で区切る設定 */
+.entry h3 {
+    padding: 0 0 10px 0;
+    border-bottom: solid 1px rgb(58, 35, 35);
+}
+
+/* ボタン */
+.button {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 25px 10px 25px;
+    background-color: rgb(58, 35, 35);
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+.button:hover, .button:focus {
+    outline: none;
+    background-color: #5c1313;
+}
+.news-list {
+    margin-top: 7px;
+    font-size: 0.85em;
+}
+
+/* ニュース */
+.news {
+    padding: 20px; 
+    background-color: #dfe3e8;
+}
+
+.news h1 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+.news ul, .news ol {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    list-style: none;
+}
+.news li a {
+    display: block;
+    padding: 10px 5px 10px 5px;
+    color: #000;
+    text-decoration: none;
+}
+.news li a:hover {
+    background-color: #ffe;
+}
+.news time {
+    float: left;
+    border: none;
+    line-height: 1.8;
+}
+.news p {
+    margin: 0 0 0 110px;
+}
+.news .desc {
+    color: #666;
+    font-size: 12px;
+}
+.news li a:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.news li a {
+    *zoom: 1;
+}
+
+/* 枠の設定 */
+.news {
+    padding: 18px;
+    border: solid 2px #dfc27e;
+    background-color: #fff;
+}
+
+/* インフォメーション */
+.information {
+    padding: 20px;
+    max-width: 250px;
+    text-align: center;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    background-color: #add8e6;
+}
+.information i {
+    margin: 0 0 10px 0;
+    font-size: 40px;
+    color: #42210b;
+    line-height: 1.2;
+}
+.information p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ボタン */
+.information .button {
+    background-color: #73ab12;
+}
+.information .button:hover, .information .button:focus {
+    background-color: #362;
+}
+
+/* フッター */
+.footer {
+    padding: 20px;
+    background-color: #eee;
+    color: #ccc;
+}
+.footer p {
+    margin: 0 0 3px 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+/* オフキャンバスメニュー */
+.cmenu {
+    padding: 20px; 
+    background-color: #dfe3e8;
+}
+.cmenu h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+.cmenu ul, .cmenu ol {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    list-style: none;
+}
+.cmenu li a {
+    display: block;
+    padding: 8px 5px 8px 5px;
+    color: #fff;
+    text-decoration: none;
+}
+.cmenu li a:hover {
+    background-color: #565656;
+}
+.cmenu .submenu {
+    background-color: #444;
+    padding-left: 10px;
+}
+.cmenu .dropdown {
+    padding-left: 10px;
+}
+.cmenu .dropdown {
+    color: #fff;
+    display: block;
+    padding: 8px 5px;
+    text-decoration: none;
+}
+
+/* 枠＋見出しの設定 */
+.cmenu {
+    margin-bottom: 0;
+    padding: 0 0 1px 0;
+    background-color: #333;
+}
+.cmenu > h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(58, 35, 35);
+    color: #fff;
+    font-size: 14px;
+}
+.cmenu > p {
+    margin: 10px;
+}
+.cmenu li a {
+    padding-left: 10px;
+}
+
+@media(max-width:640px) {
+.page-banner {
+    height: 120px;
+}
+.page-banner h2 {
+    font-size: 1.8em;
+}
+.page-banner .inner {
+    height: 120px;
+    padding: 40px 10px;
+}
+}
